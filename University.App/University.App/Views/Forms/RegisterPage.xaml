@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="University.App.Views.Forms.RegisterPage"
+             xmlns:viewModels="clr-namespace:University.ViewModels.Forms"
+             WidthRequest="100" Padding="50"
+             BackgroundColor="Green">
+
+    <ContentPage.BindingContext>
+        <viewModels:RegisterViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="20">
+
+
+                <Image Source="cali" 
+                       IsAnimationPlaying="true" 
+                       HorizontalOptions="Center"/>
+
+                <Label Text="Register" 
+                       HorizontalOptions="Center" 
+                       TextColor="White" 
+                       FontSize="40"/>
+
+
+                <Grid>
+                    <Label Text="Email" 
+                           TextColor="White" 
+                           HorizontalOptions="Start" 
+                           FontSize="20" 
+                           VerticalTextAlignment="Center" 
+                           Padding="10" />
+
+                    <Entry Placeholder="enter email" 
+                           TextColor="White" 
+                           PlaceholderColor="White" 
+                           HorizontalOptions="EndAndExpand" 
+                           WidthRequest="190" 
+                           Text="{Binding Email}"/>
+                </Grid>
+
+                <Grid>
+                    <Label Text="Password" 
+                           TextColor="White" 
+                           HorizontalOptions="Start" 
+                           FontSize="20" 
+                           VerticalTextAlignment="Center" 
+                           Padding="10"/>
+
+                    <Entry Placeholder="enter password" 
+                           TextColor="White" 
+                           PlaceholderColor="White" 
+                           IsPassword="True" 
+                           HorizontalOptions="EndAndExpand" 
+                           WidthRequest="190" 
+                           Text="{Binding Password}"/>
+                </Grid>
+
+                <Button Text="Register" 
+                        CornerRadius="10" 
+                        BackgroundColor="White" 
+                        TextColor="Black" Command="{Binding RegisterCommand}"/>
+
+                <Label HeightRequest="120"/>
+
+
+
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
